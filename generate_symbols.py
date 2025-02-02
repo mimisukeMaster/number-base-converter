@@ -7,9 +7,10 @@ def generate_symbols():
     lowercase = [chr(i) for i in range(ord('a'), ord('z') + 1)]
     hiragana = [chr(i) for i in range(ord('あ'), ord('ん') + 1)]
     katakana = [chr(i) for i in range(ord('ア'), ord('ン') + 1)]
+    hankakukana = [chr(i) for i in range(ord('ｱ'), ord('ﾝ') + 1)]
     kanji = [chr(i) for i in range(ord('一'), ord('鿿') + 1)] 
     
-    return itertools.chain(digits, uppercase, lowercase, hiragana, katakana, kanji)
+    return itertools.chain(digits, uppercase, lowercase, hiragana, katakana, hankakukana, kanji)
 
 def create_mapping():
     mapping = {}
