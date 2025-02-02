@@ -1,5 +1,5 @@
 # number-base-converter
-![MIT License](https://img.shields.io/badge/License-MIT-green)
+[<img src="https://img.shields.io/badge/License-MIT-green">](LICENSE)
 <img src="https://img.shields.io/github/repo-size/mimisukeMaster/number-base-converter?logo=gitlfs&color=ff69b4">
 [<img src="https://img.shields.io/static/v1?label=&message=Open%20in%20Visual%20Studio%20Code&color=007acc&style=flat">](https://open.vscode.dev/mimisukeMaster/number-base-converter)
 ## description
