@@ -17,7 +17,7 @@ def convert_to_decimal(value, origin_base, value_map):
     for index, digit in enumerate(reversed(value)):
         if digit not in value_map:
             raise ValueError(f"'{digit}'に対応する数が見つかりません / Cannot find the number mapped to '{digit}'.")
-        if value_map[digit] > origin_base:
+        if value_map[digit] >= origin_base:
             raise ValueError(f"'{digit}'は{origin_base}進数の表記に使えません / '{digit}' cannot be used for the notation of a number in base '{origin_base}'.")
         
         decimal_value += value_map[digit] * (origin_base ** index)
@@ -53,8 +53,14 @@ def main():
     while True:
         try:
             origin_base = int(input("何進数を変換しますか / Enter the base number to convert from: "))
+            if str(origin_base - 1) not in from_decimal_map:
+                raise ValueError(f"{origin_base}進数の変換は対応していません / Conversion from base {origin_base} is not supported")
+            
             target_base = int(input("何進数へ変換しますか / Enter the base number to convert to: "))
-            value = input("自然数を入力してください / Enter the natural number: ").strip()
+            if str(target_base - 1) not in from_decimal_map:
+                raise ValueError(f"{target_base}進数への変換は対応していません / Conversion to base {origin_base} is not supported")
+            
+            value = input("値を入力してください / Enter the value: ").strip()
             
             # 元の進数から10進数へ変換 / Convert from origin base to decimal
             decimal_value = convert_to_decimal(value, origin_base, to_decimal_map)
